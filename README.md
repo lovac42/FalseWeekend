@@ -2,7 +2,7 @@
 
 
 ## Warning:
-This addon is not for the end user, it is used for debugging purposes only.
+This addon is not for the end user, it is used for debugging purposes only.  Use this only with test db.
 
 
 ## About:
