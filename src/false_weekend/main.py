@@ -27,10 +27,10 @@ fw=FalseWeekend()
 def patch_updateCutoff(sched):
     oldToday = sched.today
 
-    try: # V2
+    if sched.name=='std2':
         sched.today = sched._daysSinceCreation() + fw.dayOffset
         sched.dayCutoff = sched._dayCutoff()
-    except AttributeError: # V1
+    else:
         # days since col created
         sched.today = int((time.time() - sched.col.crt) // 86400) + fw.dayOffset
         # end of day cutoff

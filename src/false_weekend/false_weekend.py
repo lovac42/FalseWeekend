@@ -28,7 +28,9 @@ class FalseWeekend:
 
     def reset(self):
         self.dayOffset=0
-        mw.reset()
+        self.state.setChecked(False)
+
+        mw.col.reset()
         #TODO: What happends when DB crashes before reset?
 
 
@@ -54,7 +56,8 @@ class FalseWeekend:
 
     def _exec(self):
         n=0
-        d,ok=getText("Change today of db: 0=today, 1=tomm, -1=yest. or d/m/y",default="0")
+        d,ok=getText("Change today of db: 0=today, 1=tomm, -1=yest. or m/d/y",
+            default=str(self.dayOffset))
         if ok:
             self.state.setChecked(not d=='0')
             try:
